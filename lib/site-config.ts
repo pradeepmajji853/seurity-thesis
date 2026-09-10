@@ -1,1 +1,1 @@
-export const siteOrigin='https://cybermindspace-labs.snappy-chime-6537.chatgpt.site';
+export const siteOrigin=process.env.NEXT_PUBLIC_SITE_URL || 'https://cybermindspace-labs.pradeepmajji853.chatgpt.site';

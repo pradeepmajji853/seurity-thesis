@@ -1,43 +1,41 @@
 # CyberMindSpace Labs
+Research-led CyberMindSpace website with static editorial imagery, working browser exercises and a versioned engineering thesis. The distributed research engine is proposed; the site does not claim production research results.
 
-A responsive research-led website for CyberMindSpace Labs. Built with React, Vinext and a Cloudflare Worker. The research infrastructure described by the website is proposed; diagrams and lab interactions are explicitly scripted demonstrations.
+## Development and validation
+- `npm run dev`: Vinext preview on port 5173.
+- `npm run build`: Sites / Cloudflare Worker build.
+- `npm run build:vercel`: native Next.js production build, with the Node-compatible database adapter.
+- `node --experimental-strip-types scripts/test-simulations.mjs`: checks all 16 fixture configurations, verdict precedence, record authorization and memory allocation.
+- `node scripts/sync-thesis.mjs`: regenerate the published thesis JSON and Markdown from `research/thesis.md`.
+- `npx tsc --noEmit`: check types after the Next build. Vinext and Next generate different temporary `.next` route types; do not run their builds simultaneously.
 
-## Run locally
+## Deployment
+The existing `.openai/hosting.json` identifies the Sites project and its managed D1 binding. Use the Sites build and packaging helpers to publish the Worker. Vercel uses `vercel.json` and the native Next build. Node is pinned to major 22.
 
-- `npm run install:ci` installs the locked dependencies.
-- `npm run dev` starts the local development site on port 5173.
-- `npm run build` creates the Worker and browser assets.
-- `npx tsc --noEmit` checks application types.
+Sites uses a static `cloudflare:workers` import. The Vercel build explicitly aliases that module to `db/vercel-env.ts`; no dynamic evaluation is used. On Vercel, durable registration optionally uses Cloudflare’s HTTPS D1 query API with the server-only variables documented in `.env.example`. Use an authorized existing database with the interests migration applied. Do not use the placeholder local database ID or expose tokens with a NEXT_PUBLIC prefix.
 
-The Sites skill's build and packaging helpers are used for hosted delivery. `.openai/hosting.json` identifies this site's existing project and logical D1 binding; reuse it.
+When storage is unconfigured, the collaboration page presents working email and telephone links rather than a registration form that cannot save. The API fails closed with 503. A configured but failing database preserves form input and displays an error. No email is sent automatically. Vercel REST persistence requires actual credentials; local adapter tests cannot establish remote database availability.
 
-## Main source
+Set `NEXT_PUBLIC_SITE_URL` to a verified canonical production domain. The default is the existing Sites URL. No custom-domain connection is implied.
 
-- `components/labs/site.tsx`: homepage, shared navigation, topology, lifecycle and depth/motion controls.
-- `components/labs/experiments.tsx`: simulations, scenario controls, classroom visualization, catalog and research questions.
-- `components/labs/pages.tsx`: route content and thesis renderer.
-- `app/globals.css`: shared visual and motion system, mobile and reduced-motion adaptations.
-- `research/thesis.md`: complete research thesis with sources.
-- `lib/thesis.json` and `public/research-thesis.md`: rendered and downloadable copies of the thesis. Regenerate these when updating the canonical Markdown.
-- `app/api/interest/route.ts`: validated, same-origin interest registration. No public lead-list endpoint exists.
-- `db/schema.ts` and `drizzle/`: persistent interest schema and migration.
-
-## Local database
-
-After building, apply each pending migration once:
-
+## Persistence
+Apply pending local migrations once after a Worker build:
 `node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_curvy_lila_cheney.sql`
 
-Hosting applies the migration to its separate production database. Test registrations in the local database do not become production data. Duplicate emails do not create additional records or overwrite existing details. Registrations include the submitted consent version. The site does not send email automatically.
+Sites applies migrations to its separate managed production database. Do not edit already-applied migrations. Duplicate email submissions do not overwrite existing records. Consent is versioned; no public lead-list API exists. Contact and removal requests use partnerships@cybermindspace.com.
 
-## Delivery notes
+## Product behavior
+- Export fixture: four controls, a deterministic evaluator, separate evidence sources and downloadable JSON. Missing required sink evidence is inconclusive. A confirmed unauthorized receipt establishes a violation.
+- Object authorization: Alice reads record 1042; record 1043 belongs to Bob. The vulnerable mode exposes Bob’s synthetic record; ownership enforcement returns 403. Unknown IDs return 404.
+- Scenario controls recompute the same fixture evaluator. Event inspection shows source and parent IDs. The architecture walkthrough changes only by user action.
+- Classroom planner allocates 2 GiB per session within a memory budget and shows queued sessions. It does not provision resources or estimate real capacity.
+- The catalog distinguishes CyberMindSpace browser exercises from external PortSwigger, OWASP, OverTheWire and CyLab environments. No affiliation or integration is claimed.
+- No live LLM, target shell or hosted VM is connected to these exercises. All data is synthetic.
 
-All requested routes are implemented. The introduction lab is a scripted interface; it is not a connected LLM. The classroom animation illustrates a target of 50 sessions, not current capacity. No prices, customer counts, research results or partnerships are asserted.
+## Research and assets
+The thesis 0.2 includes the property contract, threat model, lifecycle state machine, failure recovery, evidence integrity, retention, release gates, baselines and operational requirements. Proposed performance thresholds are not achieved results.
 
-The published CyberMindSpace mark is reused without geometric changes. Inter and JetBrains Mono assets were obtained from the existing CyberMindSpace site. The palette follows the supplied brief.
+The supplied thesis image is used as a blurred hero background. Two original ImageGen assets illustrate optical boundaries and silicon topography; both are conceptual artwork rather than photographs of owned hardware. Sources: original CyberMindSpace brand assets; original user-supplied thesis image; generated optical and silicon artwork. Oru’el inspired the editorial restraint and atmospheric art direction; its copy and imagery were not reused.
 
-The generated Sites origin is configured in `lib/site-config.ts`. The custom domain `labs.cybermindspace.com` has not been connected. Change the canonical origin only after domain setup is verified.
-
-WebMCP interest registration is progressively enabled when a compatible browser provides `document.modelContext`. No supported WebMCP validation context was available in this run; that interface is not claimed to have been verified. The shared HTTP registration API was tested with valid, invalid, duplicate and cross-origin input.
-
-Browser screenshot and interaction QA was not performed. Validation covered production compilation, TypeScript, route responses, database persistence and server-side registration behavior.
+## QA scope
+Verified browser interactions include the export verdicts, ownership check, missing-evidence behavior, scenario recomputation, reset controls, event navigation, memory-budget queueing, navigation and comparison/lifecycle controls. Automated fixture checks cover all input combinations. Build and HTTP checks cover both runtime targets. These checks validate the website and bounded fixtures, not the proposed distributed research engine.

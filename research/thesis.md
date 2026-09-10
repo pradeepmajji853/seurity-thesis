@@ -1,6 +1,6 @@
 # Programmable, reproducible and measurable cybersecurity environments
 
-CyberMindSpace Research Thesis • Version 0.1 • Research Program — In Development
+CyberMindSpace Research Thesis • Version 0.2 • Engineering specification and research protocol • 10 September 2026
 
 ## Abstract
 
@@ -8,7 +8,7 @@ CyberMindSpace Labs proposes infrastructure that binds a security scenario to it
 
 The strongest initial focus is a customer-support AI agent connected to retrieval, a tool gateway and synthetic customer records. This is small enough to validate yet crosses the boundaries where language-model behavior becomes system behavior. The proposed contribution is not another lab catalog, a new orchestration engine, or state-based scoring alone. It is the experimentally validated preservation of security intent across scenario specification, provisioning, observation and reproduction.
 
-No experiments described here have been run by CyberMindSpace Labs. There are no reported platform benchmarks, production-capacity measurements, publications, patents or validated novelty claims. All architectural mechanisms and numerical gates below are proposals to test.
+The website implements bounded browser fixtures for object authorization, export control, evidence evaluation and classroom memory allocation. These deterministic educational models are not a deployed agent platform and provide no evidence of production isolation, model robustness or scalable provisioning. The research experiments below have not been run. Architectural mechanisms and numerical release gates are proposals to validate, not reported results.
 
 ## Problem
 
@@ -56,7 +56,7 @@ An environment plan is a dependency graph of provisionable resources. A security
 
 An experiment run binds inputs to a particular environment incarnation. An evidence record carries provenance and correlation identifiers. A verdict references the property and supporting records. A replay contract states the promised equivalence: exact fixture outputs, equivalent initial state, or statistically comparable live behavior.
 
-These primitives form one product kernel. Learning objectives, classroom controls and enterprise reporting are interfaces over that kernel, not separate environment engines.
+These primitives form one proposed research product kernel. The near-term lab catalog can use ordinary, established cybersecurity exercises independently. Research contracts should be introduced only where they improve a measured learning or investigation workflow; a learner does not need an experimental compiler to practice Linux permissions or web authorization.
 
 ## Architecture
 
@@ -92,7 +92,7 @@ A compiler cannot certify arbitrary software behavior. Claims must be bounded to
 
 ## AI-security research progression
 
-Generation 1 is a planned educational exercise in which a model is instructed to protect a synthetic secret. Students explore direct prompt injection. This is useful teaching material but not, by itself, deep technology. The lab must explain that a real production secret should not be protected solely by a system instruction.
+The educational foundation uses familiar cybersecurity exercises: object authorization, web security, Linux and forensic investigation. The website includes a two-record authorization fixture and links to independent training providers. The AI research fixture executes a deterministic export-control rule; it does not pretend that a language model is connected. A future prompt-injection lab must explain that a production secret should not be protected solely by a system instruction.
 
 Generation 2 introduces a retrieval pipeline. Record corpus version, document identity, retrieval ranking, trust label and retrieved context. Distinguish poison ingestion, poison retrieval, model influence and actual disclosure. Indirect prompt injection is an established attack class in which adversarial instructions arrive through material an application consumes. [13]
 
@@ -206,7 +206,7 @@ A platform that constructs its own scenarios and judges its own evidence can sha
 
 ## R&D roadmap
 
-Phase 01 — Foundation, in development. Build basic lab lifecycle, the introductory prompt-injection experience and classroom workflows. Establish synthetic data, session boundaries, evidence export and cleanup before expanding the catalog.
+Phase 01 — Foundation. Browser exercises and an external lab directory are implemented. Managed lab lifecycle and classroom hosting remain in development. Establish synthetic data, session boundaries, evidence export and cleanup before operating hosted environments.
 
 Phase 02 — Programmable environments, research. Implement the bounded contract, one runtime adapter, readiness checks and correlated telemetry. Validate authoring effort and semantic drift against a competent existing-tool baseline.
 
@@ -226,7 +226,65 @@ When does additional infrastructure realism improve measurement enough to justif
 
 The proposed collaboration model is a bounded experiment with explicit deliverables. Universities and researchers could review property definitions, establish independent ground truth or reproduce results. AI-security teams could contribute representative agent/tool workflows using synthetic assets. Infrastructure partners could help measure isolation, lifecycle correctness and cost under defined workloads.
 
-A first collaboration should produce one reviewed scenario family, a documented baseline, an agreed measurement protocol and a reproducible evidence package. No partnership is implied. Expressions of interest can be directed to CyberMindSpace through its published contact address or the Labs early-access flow.
+A first collaboration should produce one reviewed scenario family, a documented baseline, an agreed measurement protocol and a reproducible evidence package. No partnership is implied. Contact partnerships@cybermindspace.com or +91 8184889557 for research and infrastructure collaboration.
+
+## Product boundary and implementation contract
+
+The proposed initial product is an evidence-backed regression runner for one support-agent workflow. Its user is an engineer changing a tool permission, retrieval source or authorization rule who needs to determine whether a previously observed unauthorized export remains possible. Inputs are a reviewed scenario, a policy revision and a bounded attack fixture. Outputs are separate task-utility and security verdicts, evidence references and a replay manifest. Arbitrary environment generation, production customer traffic, autonomous remediation and multi-cloud scheduling are outside the first release.
+
+The minimum vertical slice contains a synthetic CRM, a public-document retriever, a capability-enforcing tool gateway and an email sink that never sends external mail. An orchestrator creates unique run identities and starts the scenario only after readiness checks pass. An evaluator outside the target reads a protected sink receipt and a completed observation window. A versioned manifest binds the executable images, policy and evaluator to the result. The browser simulation demonstrates the decision logic only; implementing this isolated, independently observed slice is the next engineering deliverable.
+
+The contract schema must reject unknown security-critical fields rather than silently discard them. A submission includes schema_version, scenario_digest, tenant_id, property_id, allowed_operations, allowed_destinations, resource_limits, maximum_run_duration and evidence_obligations. An adapter declares supported property semantics. Unsupported semantics are a validation failure, not an opportunity to fall back to weaker behavior. Stable contract IDs are distinct from execution-specific run IDs.
+
+The research contribution remains falsifiable: if an ordinary integrated harness with the same resource witnesses and version management achieves equivalent validity and authoring cost, the new contract layer has not justified itself. Release the fixture corpus, comparator configuration, negative results and adaptation effort needed to reach that conclusion. Product convenience and research novelty must be evaluated separately.
+
+## Threat model and evidence obligations
+
+The adversary may control retrieved document contents, guest processes, target-produced logs and timing within the experiment. It may request tools, forge fields in an untrusted payload, generate duplicates and attempt to exhaust its own resource allowance. It must not control the evaluator, resource-witness signing identity, platform scheduler, tenant authorization service or artifact registry. Compromise of those trusted components lies outside the initial inference model and invalidates affected results rather than producing a clean security verdict.
+
+For property P = no_unauthorized_export, define a protected record set R and an unauthorized destination set D in the scenario. A trusted sink receipt binding run, request, record and destination establishes a violation when it records an element of R reaching D. A tool request, a model statement, or a gateway allow decision alone does not establish a completed export. An empty sink establishes satisfaction only if the declared window is closed, the sensor is complete for that window, all asynchronous work is quiescent, and the scenario initial state was valid. The conclusion is limited to the declared sinks and window.
+
+Verdict precedence is explicit. Invalid initial state yields execution=invalid and verdict=inconclusive. A verified unauthorized effect in a valid run establishes violated even if unrelated evidence is incomplete. Without such a witness, missing required evidence yields inconclusive. Only complete sufficient evidence permits satisfied. If an event is late, the completed bundle remains immutable; a new evaluation revision cites the late receipt and supersedes the former interpretation. Security satisfaction and legitimate task utility remain independent outputs.
+
+Evidence obligations are per property, not a requirement to collect everything. An export test needs an initial-state witness, record classification, destination authorization, a resource receipt or complete negative witness, and window closure. A privilege-escalation test instead needs effective-permission snapshots. A sensor being alive is not proof that it observed every effect. Each adapter must document coverage gaps, clock assumptions and the mechanism that closes asynchronous work.
+
+## Run lifecycle and failure recovery
+
+The normative lifecycle is accepted → validating → provisioning → ready → running → draining → evaluating → sealed → destroying → destroyed. Rejected specifications never reach provisioning. Failure, timeout and cancellation retain their reason, enter cleanup and terminate as failed, cancelled or quarantined. A lease prevents two workers from owning the same incarnation. Every transition uses a compare-and-set against the expected state and records actor, timestamp and reason.
+
+Create-run requests require an idempotency key scoped to tenant and request digest. A retry with the same key and digest returns the original run; a different digest is rejected. Provisioning operations use ownership labels and idempotent resource names. Retrying a tool action that may mutate state is prohibited unless the target supports an operation-specific idempotency key or reconciliation proves the first attempt did not commit. Transport failure is not evidence that an action failed.
+
+Cancellation closes admission to new actions, revokes delegated credentials, drains bounded in-flight work and captures the final resource state before teardown. A timeout cannot become a passing security result. If a guest cannot be stopped or a resource cannot be accounted for, quarantine its network and block new allocations on the affected worker. An independent reconciler lists resources by ownership label to find abandoned objects after control-plane failures.
+
+Initial engineering budgets, to validate during pilot work, are 120 seconds for readiness, 300 seconds for execution, 30 seconds for evidence drain and 120 seconds for cleanup verification. These are product choices, not performance claims. Each budget is versioned in the contract; expiry produces an explicit operational result. Queue time, provisioning time, execution time and evidence-drain time are measured separately so one cannot mask another.
+
+## Evidence integrity, retention and reproducibility format
+
+Each event includes a tenant-scoped run ID, environment incarnation, source ID, source sequence, event ID, schema version and payload digest. Ingestion authenticates the source independently of fields supplied by the guest. Enforce uniqueness on source, incarnation and sequence; acknowledge exact duplicates, quarantine conflicting payloads and record gaps. A propagated trace identifier helps correlation but is not an authorization credential or proof of causation.
+
+Seal a bundle manifest containing contract, artifacts, evaluator version, evidence-object hashes, completeness declaration and replay mode. Sign the manifest with a protected evaluator identity. Hashes establish integrity relative to a trusted manifest; signatures attest an issuer, not the truth of a compromised sensor. Store original records and derived interpretations separately, and do not rewrite a sealed bundle when normalization rules change.
+
+Authorization for evidence reads must verify both organization membership and run ownership. Download URLs are short-lived and scoped to one object. No target guest receives evidence-plane credentials. Audit reads, exports, deletion requests and key rotations. Use synthetic data by default; real-customer workloads require a separate data classification and retention agreement before ingestion.
+
+Proposed pilot retention is 30 days for raw synthetic event payloads and 90 days for minimized manifests, subject to an agreed experiment protocol. Retention jobs record completed deletion, including object-store versions and derived indexes. Backups use a documented expiry schedule; deletion from a live index is not immediate erasure of every backup. Recovery exercises must demonstrate that restored evidence retains hashes, ownership boundaries and evaluator versions. Production commitments cannot precede these tests.
+
+## Validation protocol and release gates
+
+Validate correctness before throughput. The conformance suite must include unauthorized export, authorized benign behavior, rejected action, missing sink witness, failed initial state, duplicate receipt, reordered delivery, late effect, conflicting source sequence, replayed event from another run, cancellation during a tool call and failed teardown. Test mutations at the actual gateway and resource boundary; assertions against a browser diagram do not validate isolation or distributed evidence capture.
+
+Use the same scenario corpus, protected assets, resource witnesses and execution budgets for the existing-harness and proposed-contract baselines. Output-only scoring is a diagnostic ablation, not the sole competitive baseline. Report valid experiments divided by all attempted instantiations, false passes divided by independently established violations, task success on legitimate tasks, inconclusive fraction, authoring plus repair time and cost per valid completed experiment. Missing runs and rejected variants remain visible in the denominators.
+
+Sample-size planning starts with pilot variance and the minimum meaningful effect. Repetitions of one prompt are not independent evidence of cross-scenario generalization. Use paired scenario-level estimates and pre-register the primary endpoint. If no false passes occur among n independent violation cases, the approximate one-sided 95% upper bound is 3/n; correlated cases reduce the effective information. Zero errors in a small curated corpus therefore cannot support a broad safety claim. Publish uncertainty and the held-out split, not just aggregate success percentages.
+
+Gate A, internal prototype: the conformance suite passes and the same contract produces equivalent fixture verdicts after export and replay. Gate B, isolated pilot: boundary tests and cleanup reconciliation pass, at least 95% of the declared corpus reaches readiness, every deliberately removed required witness is classified without a false pass, and operational costs are measured. Gate C, external research: another team reproduces selected findings with documented adaptation effort. Gate D, production candidate: restore, retention, incident response, access review, dependency review and capacity tests pass under the supported threat model. None of these distributed-system gates is claimed as achieved by the current website.
+
+## Operations and rollout specification
+
+Deploy the control plane, execution workers and evidence pipeline independently. A failed telemetry pipeline stops new experiment admission; it does not silently downgrade an evidence requirement. Expose health separately for scheduling, execution and evidence ingestion. Alert on expired leases, evidence-sequence gaps, orphaned resources, queue age, cleanup failures, unexpected egress and storage errors. Each alert needs an owner and a runbook that identifies whether to stop admission, revoke credentials or quarantine a worker.
+
+Roll out changes to a small synthetic canary corpus before pilot users. Pin images by digest and preserve the previous adapter/evaluator pair for rollback. Schema migrations must remain compatible with in-flight runs; a worker cannot reinterpret an older property under a new schema without an explicit migration. An emergency rollback restores code and routing but does not erase committed resource effects or change the historical verdict. Reanalysis is a separate revision.
+
+Cost accounting includes startup, idle queue reservations, execution, telemetry, failed runs, retries and cleanup. A proposed classroom planner must reserve platform overhead before deriving tenant capacity; the website's simplified memory calculator explicitly excludes that overhead. Capacity commitments require measured CPU, memory, storage and network limits on the actual supported workload. A production-grade thesis specifies how these claims will be tested; it cannot substitute for operating evidence.
 
 ## References
 
